@@ -6,4 +6,5 @@ pip install sockets
 
 # JS
 npm install
+
 npm run dev
