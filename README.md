@@ -5,6 +5,6 @@ Servidor em Python cliente em JS
 pip install sockets
 
 # JS
-npm install
+npm install electron
 
 npm run dev
