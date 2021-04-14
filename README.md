@@ -1,9 +1,9 @@
 # TCP_JS_Python
 Servidor em Python cliente em JS
 
-Python
+# Python
 pip install sockets
 
-JS
+# JS
 npm install
 npm run dev
