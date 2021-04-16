@@ -7,7 +7,7 @@ pip install sockets
 python server.py
 
 # JS
-cd /TCP_JS_Python/JS
+cd /TCP_JS_Python/JS/
 
 npm install electron
 
