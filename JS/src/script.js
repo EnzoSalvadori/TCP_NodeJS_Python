@@ -1,36 +1,62 @@
 const mensagem = document.querySelector('#mensagem');
 const mensagemAlta = document.querySelector('#mensagemAlta');
+var resposta;
 
 function bin2string(array){
 	var result = "";
-	for(var i = 2; i < array.length - 1; ++i){
+	for(var i = 0; i < array.length; ++i){
 		result+= (String.fromCharCode(array[i]));
 	}
 	return result;
 }
 
-function enviar(){
+function ligar(){
 
     var net = require('net');
     var client = new net.Socket();
 
-    mensagemAlta.innerHTML = '';
-    var alta = "";
-
     client.connect(5001, '127.0.0.1', function() {
         console.log('Connected');
-        client.write(mensagem.value);
+        client.write("ligar");
     });
+
     client.on('data', function(data) {
         console.log('Received: ' + data);
-        alta = bin2string(data);
-        client.write("sair");
+        resposta = bin2string(data);
+        client.write("recebido");
+        console.log(resposta);
+        alert(resposta);
         client.destroy();
-        let result = document.createTextNode(alta);
-        return mensagemAlta.appendChild(result);
     });
 
     client.on('close', function() {
         console.log('Connection closed');
     });
 };
+
+function desligar(){
+
+    var net = require('net');
+    var client = new net.Socket();
+
+    client.connect(5001, '127.0.0.1', function() {
+        console.log('Connected');
+        client.write("desligar");
+    });
+
+    client.on('data', function(data) {
+        console.log('Received: ' + data);
+        resposta = bin2string(data);
+        client.write("recebido");
+        console.log(resposta);
+        alert(resposta);
+        client.destroy();
+    });
+
+    client.on('close', function() {
+        console.log('Connection closed');
+    });
+};
+
+
+

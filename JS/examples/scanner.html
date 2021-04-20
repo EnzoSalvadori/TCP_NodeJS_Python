@@ -87,15 +87,17 @@
         <div class="container-fluid d-flex align-items-center">
           <div class="row">
             <div class="col">
-              <h1 class="display-2 text-white mb-4">Analize de arroz</h1>
-              <p class="text-white mt-0 mb-4">Os grãos são analizados em:</p>
+              <h1 class="display-2 text-white mb-4">Análise de arroz</h1>
+              <p class="text-white mt-0 mb-4">Os grãos são classificados em:</p>
               <p class="text-white mt-0 mb-0">> Com ou sem casca</p>
               <p class="text-white mt-0 mb-0">> Formato (inteiro, 1/2, 1/4, quirela)</p>
               <p class="text-white mt-0 mb-4">> 5 tipos</p>
               <div class="form-group mb-5">
                 <input id="date" type="text" class="form-control" placeholder="Fornecedor | Produtor">
               </div>
-              <button type="button" class="btn btn-secondary btn-lg active">Iniciar Scanner</button>
+              <button id="ligar" type="button" class="btn btn-secondary btn-lg active mr-4" onclick="ligar()">Iniciar Scanner</button>
+              <button id="desligar" type="button" class="btn btn-secondary btn-lg active" onclick="desligar()">Desligar Scanner</button>
+              <span class="text-white" id="liga"></span>
             </div>
           </div>
         </div>
@@ -103,16 +105,18 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
   <!-- Optional JS -->
-  <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <script src="../assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="../assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
-  <script src="assets/js/argon.js?v=1.2.0"></script>
+  <script src="../assets/js/argon.js?v=1.2.0"></script>
+  <!-- Meu JS -->
+  <script src="../src/script.js"></script>
 </body>
 
 </html>
