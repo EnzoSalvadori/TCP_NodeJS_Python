@@ -11,4 +11,6 @@ cd /TCP_JS_Python/JS/
 
 npm install electron
 
+npm install pg
+
 npm run dev

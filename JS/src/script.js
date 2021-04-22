@@ -1,5 +1,7 @@
 const mensagem = document.querySelector('#mensagem');
 const mensagemAlta = document.querySelector('#mensagemAlta');
+const teste = document.querySelector('#teste');
+
 var resposta;
 
 function bin2string(array){
@@ -10,8 +12,26 @@ function bin2string(array){
 	return result;
 }
 
-function ligar(){
+function atualizarAnalise(){
+    const { Pool, Client } = require('pg')
 
+    const client = new Client({
+        user: 'postgres',
+        host: 'localhost',
+        database: 'Arroz',
+        password: 'ozne1711',
+        port: 5432,
+    })
+
+    client.connect()
+
+    client.query('SELECT * FROM analise', (err, res) => {
+        console.log(res.rows[0])
+        client.end()
+    })
+}
+
+function ligar(){
     var net = require('net');
     var client = new net.Socket();
 
@@ -35,7 +55,6 @@ function ligar(){
 };
 
 function desligar(){
-
     var net = require('net');
     var client = new net.Socket();
 
