@@ -88,13 +88,13 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <a class="text-white">Data inicio</a>
-                            <input id="date" type="date" class="form-control" placeholder="Data inicio" onchange="atualizarAnalise()">
+                            <input id="data_inicio" type="date" class="form-control" placeholder="Data inicio" onchange="atualizarAnalise()">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <a class="text-white">Data fim</a>
-                            <input id="date" type="date" class="form-control" placeholder="Data fim" onchange="atualizarAnalise()">
+                            <input id="data_fim" type="date" class="form-control" placeholder="Data fim" onchange="atualizarAnalise()">
                         </div>
                     </div>
                 </div>
@@ -116,18 +116,23 @@
                 </div>
               </div>
               </form>
-              <span class="h2 font-weight-bold mb-0 " id="teste" >AAAAAAAA</span>
             </div>
             <!-- Card stats -->
-            <div class="row">
-                <div class="col-xl-3 col-md-6">
+            <div class="card">
+              <div class="card-header bg-transparent my-0">
+                <div class="row ml-2 mb-2">
+                  <h3 class="mb-0">Análise Geral</h3>
+                </div>
+              </div>
+              <div class="row mx-3 mt-3">
+                <div class="col-sm-3">
                   <div class="card card-stats">
                     <!-- Card body -->
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Com casca</h5>
-                          <span class="h2 font-weight-bold mb-0">540</span>
+                          <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                          <span class="h2 font-weight-bold mb-0" id="total">1000</span>
                         </div>
                         <div class="col-auto">
                           <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -135,85 +140,131 @@
                           </div>
                         </div>
                       </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>54%</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                  <div class="card card-stats">
-                    <!-- Card body -->
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Sem casca</h5>
-                          <span class="h2 font-weight-bold mb-0">460</span>
-                        </div>
-                        <div class="col-auto">
-                          <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                            <i class="ni ni-chart-bar-32"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>46%</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                  <div class="card card-stats">
-                    <!-- Card body -->
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Sem casca</h5>
-                          <span class="h2 font-weight-bold mb-0">460</span>
-                        </div>
-                        <div class="col-auto">
-                          <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                            <i class="ni ni-chart-bar-32"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>46%</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                  <div class="card card-stats">
-                    <!-- Card body -->
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Sem casca</h5>
-                          <span class="h2 font-weight-bold mb-0">460</span>
-                        </div>
-                        <div class="col-auto">
-                          <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                            <i class="ni ni-chart-bar-32"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>46%</span>
-                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xl-3 col-md-6">
+            <!-- Card stats -->
+            <div class="row mx-3">
+              <div class="col-sm justify-content-center">
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                        <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      </div>
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                          <i class="ni ni-chart-bar-32"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                        <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      </div>
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                          <i class="ni ni-chart-bar-32"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                        <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      </div>
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                          <i class="ni ni-chart-bar-32"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                        <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      </div>
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                          <i class="ni ni-chart-bar-32"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                        <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      </div>
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                          <i class="ni ni-chart-bar-32"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                        <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      </div>
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                          <i class="ni ni-chart-bar-32"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card stats -->
+            <div class="row mx-3">
+                <div class="col-sm mb-2">
                   <div class="card card-stats">
                     <!-- Card body -->
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Com casca</h5>
-                          <span class="h2 font-weight-bold mb-0">540</span>
+                          <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                          <span class="h2 font-weight-bold mb-0" id="total">1000</span>
                         </div>
                         <div class="col-auto">
                           <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -221,78 +272,189 @@
                           </div>
                         </div>
                       </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>54%</span>
-                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-sm">
                   <div class="card card-stats">
                     <!-- Card body -->
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Sem casca</h5>
-                          <span class="h2 font-weight-bold mb-0">460</span>
+                          <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                          <span class="h2 font-weight-bold mb-0" id="total">1000</span>
                         </div>
                         <div class="col-auto">
-                          <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                          <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
                             <i class="ni ni-chart-bar-32"></i>
                           </div>
                         </div>
                       </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>46%</span>
-                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-sm">
                   <div class="card card-stats">
                     <!-- Card body -->
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Sem casca</h5>
-                          <span class="h2 font-weight-bold mb-0">460</span>
+                          <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                          <span class="h2 font-weight-bold mb-0" id="total">1000</span>
                         </div>
                         <div class="col-auto">
-                          <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                          <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
                             <i class="ni ni-chart-bar-32"></i>
                           </div>
                         </div>
                       </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>46%</span>
-                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-sm">
                   <div class="card card-stats">
                     <!-- Card body -->
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h5 class="card-title text-uppercase text-muted mb-0">Sem casca</h5>
-                          <span class="h2 font-weight-bold mb-0">460</span>
+                          <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                          <span class="h2 font-weight-bold mb-0" id="total">1000</span>
                         </div>
                         <div class="col-auto">
-                          <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                          <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
                             <i class="ni ni-chart-bar-32"></i>
                           </div>
                         </div>
                       </div>
-                      <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>46%</span>
-                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="card card-stats">
+                    <!-- Card body -->
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                          <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                            <i class="ni ni-chart-bar-32"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="card card-stats">
+                    <!-- Card body -->
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h5 class="card-title text-uppercase text-muted mb-0">Total</h5> 
+                          <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                            <i class="ni ni-chart-bar-32"></i>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="card">
+              <div class="card-header bg-transparent my-0">
+                <div class="row ml-2 mb-2">
+                  <h3 class="mb-0">Análises por amostras</h3>
+              </div>
+              </div>
+              <div class="table-responsive">
+                <!-- Projects table -->
+                <table class="table align-items-center table-flush">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Data</th>
+                      <th scope="col">Produtor</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">total</th>
+                      <th scope="col">Imagens</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        26/04/2021
+                      </th>
+                      <td>
+                        4,569
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        340
+                      </td>
+                      <td>
+                        <button id="imagen" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#CollapseID" aria-expanded="false" aria-controls="CollapseID">Imagens</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
+        </div>
+      </div>
       </div>
   </div>
  <!-- Argon Scripts -->
@@ -309,6 +471,7 @@
   <script src="../assets/js/argon.js?v=1.2.0"></script>
   <!-- Meu JS -->
   <script src="../src/script.js"></script>
+  <script>atualizarAnalise();</script>
 </body>
 
 </html>
