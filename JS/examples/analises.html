@@ -80,50 +80,12 @@
   </nav>
   <!-- Main content -->
   <div class="main-content" id="panel">
-    <div class="header bg-primary pb-6">
+    <div class="header bg-primary pb-3 pt-5">
       <div class="container-fluid">
-        <div class="card-body">
-          <form role="form">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <a class="text-white">Data inicio</a>
-                  <input id="data_inicio" type="date" class="form-control" placeholder="Data inicio"
-                    onchange="atualizarAnalise()">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <a class="text-white">Data fim</a>
-                  <input id="data_fim" type="date" class="form-control" placeholder="Data fim"
-                    onchange="atualizarAnalise()">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input id="date" type="text" class="form-control" placeholder="Fornecedor | Produtor"
-                    onchange="atualizarAnalise()">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input id="date" type="text" class="form-control" placeholder="Usuário" onchange="atualizarAnalise()">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input id="date" type="text" class="form-control" placeholder="Código" onchange="atualizarAnalise()">
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
         <!-- Card stats -->
-        <div class="card">
+        <div class="card bg-secondary mb-0">
           <div class="card-header bg-transparent my-0">
-            <div class="row ml-2 mb-2">
+            <div class="row ml-2 mb-1">
               <h3 class="mb-0">Análise Geral</h3>
             </div>
           </div>
@@ -285,14 +247,14 @@
           </div>
           <!-- Card stats -->
           <div class="row mx-3">
-            <div class="col-sm mb-2">
+            <div class="col-sm">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Tipo 1</h5>
-                      <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      <span class="h2 font-weight-bold mb-0" id="tipo1">1000</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -310,7 +272,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Tipo 2</h5>
-                      <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      <span class="h2 font-weight-bold mb-0" id="tipo2">1000</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -328,7 +290,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Tipo 3</h5>
-                      <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      <span class="h2 font-weight-bold mb-0" id="tipo3">1000</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -346,7 +308,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Tipo 4</h5>
-                      <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      <span class="h2 font-weight-bold mb-0" id="tipo4">1000</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -364,7 +326,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Tipo 5</h5>
-                      <span class="h2 font-weight-bold mb-0" id="total">1000</span>
+                      <span class="h2 font-weight-bold mb-0" id="tipo5">1000</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -376,13 +338,50 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="card">
+          <div class="card-body pb-0">
+            <form role="form">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <h3>Data inicio</h3>
+                    <input id="data_inicio" type="date" class="form-control" placeholder="Data inicio"
+                      onchange="atualizarAnalise()">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <h3>Data fim</h3>
+                    <input id="data_fim" type="date" class="form-control" placeholder="Data fim"
+                      onchange="atualizarAnalise()">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input id="produtor" type="text" class="form-control" placeholder="Fornecedor | Produtor"
+                      onkeyup="atualizarAnalise()">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input id="usuario" type="text" class="form-control" placeholder="Usuário"
+                      onkeyup="atualizarAnalise()">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input id="codigo" type="text" class="form-control" placeholder="Código"
+                      onkeyup="atualizarAnalise()">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
           <div class="card-header bg-transparent my-0">
             <div class="row ml-2 mb-2">
               <h3 class="mb-0">Análises por amostras</h3>
-              <label id="linhas"></label>
-              <!--<label id="linhas" style="display:none"></label>-->
             </div>
           </div>
           <div class="table-responsive">
@@ -390,22 +389,23 @@
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" class="text-center">Data</th>
-                  <th scope="col" class="text-center">Codigo</th>
-                  <th scope="col" class="text-center">Inteiro</th>
-                  <th scope="col" class="text-center">(3/4)</th>
-                  <th scope="col" class="text-center">(1/2)</th>
-                  <th scope="col" class="text-center">(1/4)</th>
-                  <th scope="col" class="text-center">Quirera</th>
-                  <th scope="col" class="text-center">Com casca</th>
-                  <th scope="col" class="text-center">Sem casca</th>
-                  <th scope="col" class="text-center">Tipo 1</th>
-                  <th scope="col" class="text-center">Tipo 2</th>
-                  <th scope="col" class="text-center">Tipo 3</th>
-                  <th scope="col" class="text-center">Tipo 4</th>
-                  <th scope="col" class="text-center">Tipo 5</th>
-                  <th scope="col" class="text-center">Total</th>
-                  <th scope="col" class="text-center">imagens</th>
+                  <th scope="col" class="text-center px-0 mx-0">Produtor</th>
+                  <th scope="col" class="text-center px-0 mx-0">Data</th>
+                  <th scope="col" class="text-center px-0 mx-0">Codigo</th>
+                  <th scope="col" class="text-center px-0 mx-0">Inteiro</th>
+                  <th scope="col" class="text-center px-0 mx-0">(3/4)</th>
+                  <th scope="col" class="text-center px-0 mx-0">(1/2)</th>
+                  <th scope="col" class="text-center px-0 mx-0">(1/4)</th>
+                  <th scope="col" class="text-center px-0 mx-0">Quirera</th>
+                  <th scope="col" class="text-center px-0 mx-0">Com casca</th>
+                  <th scope="col" class="text-center px-0 mx-0">Sem casca</th>
+                  <th scope="col" class="text-center px-0 mx-0">Tipo 1</th>
+                  <th scope="col" class="text-center px-0 mx-0">Tipo 2</th>
+                  <th scope="col" class="text-center px-0 mx-0">Tipo 3</th>
+                  <th scope="col" class="text-center px-0 mx-0">Tipo 4</th>
+                  <th scope="col" class="text-center px-0 mx-0">Tipo 5</th>
+                  <th scope="col" class="text-center px-0 mx-0">Total</th>
+                  <th scope="col" class="text-center px-0 mx-0">imagens</th>
                 </tr>
               </thead>
               <tbody>
@@ -419,7 +419,8 @@
   </div>
 
   <template id="template">
-    <tr>
+    <tr class="bg-white">
+      <td class="text-center"></td>
       <td class="text-center"></td>
       <td class="text-center"></td>
       <td class="text-center"></td>
@@ -452,7 +453,7 @@
   <!-- Argon JS -->
   <script src="../assets/js/argon.js?v=1.2.0"></script>
   <!-- Meu JS -->
-  <script src="../src/script.js"></script>
+  <script src="../src/banco.js"></script>
   <script>atualizarAnalise();</script>
 </body>
 
