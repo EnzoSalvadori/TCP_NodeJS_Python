@@ -21,6 +21,14 @@ const produtor = document.querySelector('#produtor');
 
 const corpo_tabela = document.querySelector("tbody");
 
+const titulo = document.querySelector("#titulo");
+const codigo_amostra = document.querySelector("#codigo_amostra");
+const produtor_amostra = document.querySelector("#produtor_amostra");
+const descricao_amostra = document.querySelector("#descricao_amostra");
+const resultado = document.querySelector("#resultado");
+const id_amostra = document.querySelector("#id_amostra");
+
+
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('./banco/arroz');
 
@@ -51,7 +59,7 @@ function atualizarAnalise() {
 
     else {  // fazer todos os selects possiveis para cada caso
         db.serialize(function () {
-            db.all("SELECT * FROM amostra", (error, res) => {
+            db.all("SELECT * FROM amostra WHERE UPPER(codigo) LIKE UPPER('%"+ codigo.value + "%')", (error, res) => {
                 soma(res);
                 preencher();
                 tabela(res);
@@ -114,7 +122,14 @@ function preencher() {
 function atualizarAmostra() {
     var ipcRenderer = require('electron').ipcRenderer;
     ipcRenderer.on('store-data', function (event, store) {
+        id_amostra.value = store;
         db.serialize(function () {
+            db.all('SELECT * FROM amostra WHERE id =' + store, (error, res) => {    
+                titulo.innerHTML = "Amostra codigo  " + res[0].codigo;
+                codigo_amostra.value = res[0].codigo;
+                produtor_amostra.value = res[0].fk_fornecedor;
+                descricao_amostra.innerHTML = res[0].descricao;
+            });
             db.all('SELECT * FROM imagem WHERE fk_amostra =' + store, (error, res) => {
                 tabelaAmostra(res);
             });
@@ -194,6 +209,23 @@ function tabela(res) {
         var nova_linha = document.importNode(template.content, true);
         corpo_tabela.appendChild(nova_linha);
     }
+}
+
+function alterar_amostra(){
+    if( codigo_amostra.value == "" || produtor_amostra == "" || descricao_amostra.value == ""){
+        resultado.setAttribute('class', ' alert alert-warning text-center');
+        resultado.innerHTML = "TODOS OS CAMPOS PRECISAM ESTAR PREENCHIDOS";
+        console.log(id_amostra.value)
+    }
+    else{
+        db.serialize(function () {
+            db.run("UPDATE  amostra SET codigo = "+codigo_amostra.value+ ", fk_fornecedor = " +produtor_amostra.value+ ", descricao = '" +descricao_amostra.value+ "'WHERE id =" +id_amostra.value);
+        });
+        titulo.innerHTML = "Amostra codigo  " + codigo_amostra.value;
+        resultado.setAttribute('class', 'alert alert-success text-center');
+        resultado.innerHTML = "SALVO COM SUCESSO"
+    }
+    db.close;
 }
 
 function abreImg(caminho) {

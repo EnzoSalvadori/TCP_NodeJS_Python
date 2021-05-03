@@ -41,6 +41,45 @@
             <div class="card m-6">
                 <div class="card-header bg-transparent my-0">
                     <div class="row ml-2 mb-2">
+                        <h3 class="mb-0" id="titulo">Amostra </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 ml-4 mt-2 px-4">
+                        <div class="form-group">
+                            <label>Código</label>
+                            <input id="codigo_amostra" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-2 px-4">
+                        <div class="form-group">
+                            <label>Produtor</label>
+                            <input id="produtor_amostra" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 mx-4 px-2 ">
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea class="form-control" id="descricao_amostra" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 ml-4 pl-4 pr-0 mr-0 mb-4">
+                        <button class="btn btn-primary btn-lg" onclick="alterar_amostra()">Salvar dados</button>
+                    </div>
+                    <div class="col-lg-8 pl-0 ml-0 mb-4">
+                        <div id="resultado" role="alert">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label id="id_amostra" hidden></label>
+        </div>
+        <div class="container-fluid">
+            <div class="card m-6">
+                <div class="card-header bg-transparent my-0">
+                    <div class="row ml-2 mb-2">
                         <h3 class="mb-0">Análises por imagens</h3>
                     </div>
                 </div>
@@ -68,7 +107,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                           
+
                         </tbody>
                     </table>
                 </div>
@@ -78,22 +117,22 @@
 
     <template id="templateAmostra">
         <tr>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
+            <td class="text-center  px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
         </tr>
     </template>
 
