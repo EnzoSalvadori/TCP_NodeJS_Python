@@ -1,7 +1,6 @@
 {
   "name": "interface",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "electron ."
@@ -10,7 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^12.0.4",
-    "pg": "^8.6.0"
-  }
+    "electron": "^12.0.6"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {},
+  "description": ""
 }

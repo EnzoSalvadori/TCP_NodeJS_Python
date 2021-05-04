@@ -28,7 +28,6 @@ const descricao_amostra = document.querySelector("#descricao_amostra");
 const resultado = document.querySelector("#resultado");
 const id_amostra = document.querySelector("#id_amostra");
 
-
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('./banco/arroz');
 
