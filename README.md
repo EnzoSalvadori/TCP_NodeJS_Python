@@ -11,6 +11,6 @@ cd /TCP_JS_Python/JS/
 
 npm install electron
 
-npm install sqlite3
+npm install sqlite3@5.0.0
 
 npm run dev
