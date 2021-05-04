@@ -38,7 +38,46 @@
     <!-- Main content -->
     <div class="main-content" id="panel">
         <div class="container-fluid">
-            <div class="card m-6">
+            <div class="card mx-6 mb-0 mt-4">
+                <div class="card-header bg-transparent my-0">
+                    <div class="row ml-2 mb-2">
+                        <h3 class="mb-0" id="titulo">Amostra </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 ml-4 mt-2 px-4">
+                        <div class="form-group">
+                            <label>Código</label>
+                            <input id="codigo_amostra" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-2 px-4">
+                        <div class="form-group">
+                            <label>Produtor</label>
+                            <input id="produtor_amostra" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 mx-4 px-2 ">
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea class="form-control" id="descricao_amostra" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 ml-4 pl-4 pr-0 mr-0 mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" onclick="alterar_amostra()">Salvar dados</button>
+                    </div>
+                    <div class="col-lg-8 col-md-offset-4">
+                        <div id="resultado" role="alert" style="height: 51px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label id="id_amostra" hidden></label>
+        </div>
+        <div class="container-fluid">
+            <div class="card mx-6 mt-4">
                 <div class="card-header bg-transparent my-0">
                     <div class="row ml-2 mb-2">
                         <h3 class="mb-0">Análises por imagens</h3>
@@ -68,9 +107,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                           
+
                         </tbody>
                     </table>
+                </div>
+                <div class="col-lg-10 pl-0 ml-0 mb-4">
+                    <button>Baixar imagens</button>
                 </div>
             </div>
         </div>
@@ -78,22 +120,22 @@
 
     <template id="templateAmostra">
         <tr>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
+            <td class="text-center px-0 mx-0"></td>
         </tr>
     </template>
 
@@ -110,7 +152,7 @@
     <!-- Argon JS -->
     <script src="../assets/js/argon.js?v=1.2.0"></script>
     <!-- Meu JS -->
-    <script src="../src/banco.js"></script>
+    <script src="../src/bancoLite.js"></script>
     <script>atualizarAmostra();</script>
 </body>
 
