@@ -65,7 +65,7 @@ function atualizarAnalise() {
             });
         });
     }
-    db.close;
+    db.close();
 }
 
 function soma(res) {
@@ -133,7 +133,7 @@ function atualizarAmostra() {
                 tabelaAmostra(res);
             });
         });
-        db.close;
+        db.close();
     });
 }
 
@@ -224,7 +224,7 @@ function alterar_amostra(){
         resultado.setAttribute('class', 'alert alert-success text-center');
         resultado.innerHTML = "SALVO COM SUCESSO"
     }
-    db.close;
+    db.close();
 }
 
 function abreImg(caminho) {
