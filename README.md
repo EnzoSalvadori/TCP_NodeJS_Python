@@ -11,6 +11,6 @@ cd /TCP_JS_Python/JS/
 
 npm install electron
 
-npm install pg
+npm install sqlite3
 
 npm run dev
