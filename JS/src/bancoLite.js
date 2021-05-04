@@ -28,9 +28,6 @@ const descricao_amostra = document.querySelector("#descricao_amostra");
 const resultado = document.querySelector("#resultado");
 const id_amostra = document.querySelector("#id_amostra");
 
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('./banco/arroz');
-
 inteiro = 0;
 tres_quartos = 0;
 meio = 0;
@@ -46,6 +43,8 @@ tipo4 = 0;
 tipo5 = 0;
 
 function atualizarAnalise() {
+    var sqlite3 = require('sqlite3').verbose();
+    var db = new sqlite3.Database('./banco/arroz');
 
     if ((data_fim.value != "") && (data_inicio.value != "")) {  // fazer todos os selects possiveis para cada caso
         client.query('SELECT * FROM amostra', (err, res) => {
@@ -55,10 +54,9 @@ function atualizarAnalise() {
             client.end();
         })
     }
-
     else {  // fazer todos os selects possiveis para cada caso
         db.serialize(function () {
-            db.all("SELECT * FROM amostra WHERE UPPER(codigo) LIKE UPPER('%"+ codigo.value + "%')", (error, res) => {
+            db.all("SELECT * FROM amostra WHERE UPPER(codigo) LIKE UPPER('%" + codigo.value + "%')", (error, res) => {
                 soma(res);
                 preencher();
                 tabela(res);
@@ -119,11 +117,14 @@ function preencher() {
 }
 
 function atualizarAmostra() {
+    var sqlite3 = require('sqlite3').verbose();
+    var db = new sqlite3.Database('./banco/arroz');
+
     var ipcRenderer = require('electron').ipcRenderer;
     ipcRenderer.on('store-data', function (event, store) {
         id_amostra.value = store;
         db.serialize(function () {
-            db.all('SELECT * FROM amostra WHERE id =' + store, (error, res) => {    
+            db.all('SELECT * FROM amostra WHERE id =' + store, (error, res) => {
                 titulo.innerHTML = "Amostra codigo  " + res[0].codigo;
                 codigo_amostra.value = res[0].codigo;
                 produtor_amostra.value = res[0].fk_fornecedor;
@@ -210,15 +211,17 @@ function tabela(res) {
     }
 }
 
-function alterar_amostra(){
-    if( codigo_amostra.value == "" || produtor_amostra == "" || descricao_amostra.value == ""){
+function alterar_amostra() {
+    var sqlite3 = require('sqlite3').verbose();
+    var db = new sqlite3.Database('./banco/arroz');
+    if (codigo_amostra.value == "" || produtor_amostra == "" || descricao_amostra.value == "") {
         resultado.setAttribute('class', ' alert alert-warning text-center');
         resultado.innerHTML = "TODOS OS CAMPOS PRECISAM ESTAR PREENCHIDOS";
         console.log(id_amostra.value)
     }
-    else{
+    else {
         db.serialize(function () {
-            db.run("UPDATE  amostra SET codigo = "+codigo_amostra.value+ ", fk_fornecedor = " +produtor_amostra.value+ ", descricao = '" +descricao_amostra.value+ "'WHERE id =" +id_amostra.value);
+            db.run("UPDATE  amostra SET codigo = " + codigo_amostra.value + ", fk_fornecedor = " + produtor_amostra.value + ", descricao = '" + descricao_amostra.value + "'WHERE id =" + id_amostra.value);
         });
         titulo.innerHTML = "Amostra codigo  " + codigo_amostra.value;
         resultado.setAttribute('class', 'alert alert-success text-center');

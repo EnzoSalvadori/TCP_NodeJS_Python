@@ -9,7 +9,7 @@ python server.py
 # JS
 cd /TCP_JS_Python/JS/
 
-npm install electron
+npm install electron@8.0.0
 
 npm install sqlite3@5.0.0
 
