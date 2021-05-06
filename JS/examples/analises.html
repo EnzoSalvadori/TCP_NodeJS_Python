@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
 
-<body class="bg-default">
+<body class="bg-primary">
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
@@ -85,10 +85,65 @@
         <!-- Card stats -->
         <div class="card bg-secondary mb-0">
           <div class="card-header bg-transparent my-0">
-            <div class="row ml-2 mb-1">
+            <div class="row ml-0 mb-1">
               <h3 class="mb-0">Análise Geral</h3>
             </div>
           </div>
+          <!-- form -->
+          <div class="card-body pb-0">
+            <form role="form">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <h3>Data inicio</h3>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <h3>Data fim</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <input id="data_inicio" type="date" class="form-control" placeholder="Data inicio"
+                      onchange="atualizarAnalise()">
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <input id="data_fim" type="date" class="form-control" placeholder="Data fim"
+                      onchange="atualizarAnalise()">
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <input id="produtor" type="text" class="form-control" placeholder="Fornecedor | Produtor"
+                      onkeyup="atualizarAnalise()">
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <input id="usuario" type="text" class="form-control" placeholder="Usuário"
+                      onkeyup="atualizarAnalise()">
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <input id="codigo" type="text" class="form-control" placeholder="Código"
+                      onkeyup="atualizarAnalise()">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card-header bg-transparent my-0">
+            <div class="row ml-0 mb-1">
+              <h3 class="mb-0">Análise Geral</h3>
+            </div>
+          </div>
+          <!-- Card stats -->
           <div class="row mx-3 mt-3">
             <div class="col-sm-3">
               <div class="card card-stats">
@@ -105,12 +160,13 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="mr-2"></span>
+                    <span class=""></span>
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Card stats -->
-          <div class="row mx-3">
             <div class="col-sm-3">
               <div class="card card-stats">
                 <!-- Card body -->
@@ -338,49 +394,8 @@
               </div>
             </div>
           </div>
-          <div class="card-body pb-0">
-            <form role="form">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <h3>Data inicio</h3>
-                    <input id="data_inicio" type="date" class="form-control" placeholder="Data inicio"
-                      onchange="atualizarAnalise()">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <h3>Data fim</h3>
-                    <input id="data_fim" type="date" class="form-control" placeholder="Data fim"
-                      onchange="atualizarAnalise()">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input id="produtor" type="text" class="form-control" placeholder="Fornecedor | Produtor"
-                      onkeyup="atualizarAnalise()">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input id="usuario" type="text" class="form-control" placeholder="Usuário"
-                      onkeyup="atualizarAnalise()">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input id="codigo" type="text" class="form-control" placeholder="Código"
-                      onkeyup="atualizarAnalise()">
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-
           <div class="card-header bg-transparent my-0">
-            <div class="row ml-2 mb-2">
+            <div class="row ml-0 mb-2">
               <h3 class="mb-0">Análises por amostras</h3>
             </div>
           </div>
