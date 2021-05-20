@@ -16,23 +16,23 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-        <meta name="author" content="Creative Tim">
-        <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
-        <!-- Favicon -->
-        <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-        <!-- Icons -->
-        <link rel="stylesheet" href="../assets/vendor/nucleo/css/nucleo.css" type="text/css">
-        <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-        <!-- Page plugins -->
-        <!-- Argon CSS -->
-        <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
-      </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="../assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <!-- Page plugins -->
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
+</head>
 
 <body class="bg-default">
   <!-- Sidenav -->
@@ -72,7 +72,7 @@
                 <i class="ni ni-bold-right text-primary"></i>
                 <span class="nav-link-text">Limpeza</span>
               </a>
-          </li>
+            </li>
           </ul>
         </div>
       </div>
@@ -80,28 +80,39 @@
   </nav>
   <!-- Main content -->
   <div class="main-content" id="panel">
-    <div class="header pb-6 d-flex align-items-center" style="min-height: 670px; background-image: url(../assets/img/theme/arroz.png); background-size: cover; background-position: center top;">
-        <!-- Mask -->
-        <span class="mask bg-gradient-default opacity-8"></span>
-        <!-- Header container -->
-        <div class="container-fluid d-flex align-items-center">
-          <div class="row">
-            <div class="col">
-              <h1 class="display-2 text-white mb-4">Análise de arroz</h1>
-              <p class="text-white mt-0 mb-4">Os grãos são classificados em:</p>
-              <p class="text-white mt-0 mb-0">> Com ou sem casca</p>
-              <p class="text-white mt-0 mb-0">> Formato (inteiro, 1/2, 1/4, quirela)</p>
-              <p class="text-white mt-0 mb-4">> 5 tipos</p>
-              <div class="form-group mb-5">
-                <input id="date" type="text" class="form-control" placeholder="Fornecedor | Produtor">
+    <div class="header pb-6 d-flex align-items-center"
+      style="min-height: 970px; background-image: url(../assets/img/theme/arroz.png); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+      <div class="container-fluid align-items-center">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-2 text-white mb-4">Análise de arroz</h1>
+            <p class="text-white mt-0 mb-4">Os grãos são classificados em:</p>
+            <p class="text-white mt-0 mb-0">> Com ou sem casca</p>
+            <p class="text-white mt-0 mb-0">> Formato (inteiro, 1/2, 1/4, quirela)</p>
+            <p class="text-white mt-0 mb-4">> 5 tipos</p>
+            <div class="row">
+              <div class="form-group col-lg-2">
+                <input id="produtor" type="text" class="form-control" placeholder="Fornecedor | Produtor">
               </div>
-              <button id="ligar" type="button" class="btn btn-secondary btn-lg active mr-4" onclick="ligar()">Iniciar Scanner</button>
-              <button id="desligar" type="button" class="btn btn-secondary btn-lg active" onclick="desligar()">Desligar Scanner</button>
-              <span class="text-white" id="liga"></span>
             </div>
+            <div class="row">
+              <div class="form-group  col-lg-4">
+                <label class="text-white">Descrição</label>
+                <textarea class="form-control" id="descricao_amostra" rows="4"></textarea>
+              </div>
+            </div>
+            <button id="ligar" type="button" class="btn btn-secondary btn-lg mr-4" onclick="ligar()">Iniciar
+              Scanner</button>
+            <button id="desligar" type="button" class="btn btn-secondary btn-lg " onclick="desligar()">Desligar
+              Scanner</button>
+            <span class="text-white" id="liga"></span>
           </div>
         </div>
       </div>
+    </div>
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->

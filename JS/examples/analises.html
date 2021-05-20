@@ -80,19 +80,19 @@
   </nav>
   <!-- Main content -->
   <div class="main-content" id="panel">
-    <div class="header bg-primary pb-3 pt-5">
+    <div class="header bg-primary pb-4 pt-4">
       <div class="container-fluid">
         <!-- Card stats -->
-        <div class="card bg-secondary mb-0">
-          <div class="card-header bg-transparent my-0">
+        <div class="card bg-white mb-0">
+          <div class="card-header bg-light my-0">
             <div class="row ml-0 mb-1">
               <h3 class="mb-0">Análise Geral</h3>
             </div>
           </div>
           <!-- form -->
-          <div class="card-body pb-0">
+          <div class="card-body pb-0 px-0">
             <form role="form">
-              <div class="row">
+              <div class="row px-4">
                 <div class="col-lg-3">
                   <div class="form-group">
                     <h3>Data inicio</h3>
@@ -104,7 +104,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row px-4">
                 <div class="col-lg-3">
                   <div class="form-group">
                     <input id="data_inicio" type="date" class="form-control" placeholder="Data inicio"
@@ -119,13 +119,13 @@
                 </div>
                 <div class="col-lg-2">
                   <div class="form-group">
-                    <input id="produtor" type="text" class="form-control" placeholder="Fornecedor | Produtor"
-                      onkeyup="atualizarAnalise()">
+                    <select id="usuario" class="form-control" name="vazio" onchange="atualizarAnalise()">
+                    </select>
                   </div>
                 </div>
                 <div class="col-lg-2">
                   <div class="form-group">
-                    <input id="usuario" type="text" class="form-control" placeholder="Usuário"
+                    <input id="produtor" type="text" class="form-control" placeholder="Fornecedor | Produtor"
                       onkeyup="atualizarAnalise()">
                   </div>
                 </div>
@@ -135,13 +135,7 @@
                       onkeyup="atualizarAnalise()">
                   </div>
                 </div>
-              </div>
             </form>
-          </div>
-          <div class="card-header bg-transparent my-0">
-            <div class="row ml-0 mb-1">
-              <h3 class="mb-0">Análise Geral</h3>
-            </div>
           </div>
           <!-- Card stats -->
           <div class="row mx-3 mt-3">
@@ -161,8 +155,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-sm">
-                    <span class="mr-2"></span>
-                    <span class=""></span>
+                    <span class="text-info mr-2" id="p_total"></span>
+                    <span class="">Do total de amostras</span>
                   </p>
                 </div>
               </div>
@@ -204,6 +198,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_sem_casca"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -225,6 +223,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_inteiro"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -243,6 +245,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_tres_quartos"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -261,6 +267,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_meio"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -279,6 +289,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_um_quarto"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -297,6 +311,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_quirera"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -318,6 +336,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_tipo1"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -336,6 +358,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_tipo2"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -354,6 +380,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_tipo3"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -372,6 +402,10 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_tipo4"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -390,11 +424,26 @@
                       </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-sm">
+                    <span class="text-info mr-2" id="p_tipo5"></span>
+                    <span class="text-nowrap">Do total de amostras</span>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card-header bg-transparent my-0">
+          <div class="row mx-3 my-3">
+            <div class="col-sm-4">
+              <canvas id="pieChart1" style="max-width: 500px;" class="pb-3"></canvas>
+            </div>
+            <div class="col-sm-4">
+              <canvas id="pieChart2" style="max-width: 500px;" class="pb-3"></canvas>
+            </div>
+            <div class="col-sm-4">
+              <canvas id="pieChart3" style="max-width: 500px;" class="pb-3"></canvas>
+            </div>
+          </div>
+          <div class="card-header bg-light my-0 py-3">
             <div class="row ml-0 mb-2">
               <h3 class="mb-0">Análises por amostras</h3>
             </div>

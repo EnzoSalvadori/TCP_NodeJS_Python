@@ -37,47 +37,285 @@
 <body class="bg-default">
     <!-- Main content -->
     <div class="main-content" id="panel">
-        <div class="container-fluid">
-            <div class="card mx-6 mb-0 mt-4">
-                <div class="card-header bg-transparent my-0">
-                    <div class="row ml-2 mb-2">
-                        <h3 class="mb-0" id="titulo">Amostra </h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-5 ml-4 mt-2 px-4">
-                        <div class="form-group">
-                            <label>Código</label>
-                            <input id="codigo_amostra" type="text" class="form-control">
+        <div class="row mx-0">
+            <label id="id_amostra" hidden></label>
+            <div class="col-6 mx-0">
+                <div class="container-fluid">
+                    <div class="card mt-4" style="min-height: 400px">
+                        <div class="card-header bg-transparent my-0">
+                            <div class="row ml-2 mb-2">
+                                <h3 class="mb-0" id="titulo">Análise Geral</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-5 mt-2 px-4">
-                        <div class="form-group">
-                            <label>Produtor</label>
-                            <input id="produtor_amostra" type="text" class="form-control">
+                        <div class="row px-4">
+                            <div class="col-3 mt-4 px-2 pl-4">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h4 class="card-title text-uppercase mb-2">Total</h4>
+                                                <span class="mb-0" id="total">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_total">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mt-4 px-2">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h4 class="card-title text-uppercase mb-2">Com casca</h4>
+                                                <span class="mb-0" id="com_casca">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_com_casca">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mt-4 px-2">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h4 class="card-title text-uppercase mb-2">Sem casca</h4>
+                                                <span class="mb-0" id="sem_casca">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_sem_casca">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-10 mx-4 px-2 ">
-                    <div class="form-group">
-                        <label>Descrição</label>
-                        <textarea class="form-control" id="descricao_amostra" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 ml-4 pl-4 pr-0 mr-0 mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" onclick="alterar_amostra()">Salvar dados</button>
-                    </div>
-                    <div class="col-lg-8 col-md-offset-4">
-                        <div id="resultado" role="alert" style="height: 51px;">
+                        <div class="row px-4">
+                            <div class="col- mt-4 px-2 pl-4">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">Inteiro</h4>
+                                                <span class="mb-0" id="inteiro">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_inteiro">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">(3/4)</h4>
+                                                <span class="mb-0" id="tres_quartos">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_tres_quartos">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">(1/2)</h4>
+                                                <span class="mb-0" id="meio">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_meio">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">(1/4)</h4>
+                                                <span class="mb-0" id="um_quarto">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_um_quarto">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats mb-0">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">Quirera</h4>
+                                                <span class="mb-0" id="quirera">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_quirera">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row px-4">
+                            <div class="col- mt-4 px-2 pl-4">
+                                <div class="card card-stats">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">Tipo 1</h4>
+                                                <span class="mb-0" id="tipo1">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_tipo1">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">Tipo 2</h4>
+                                                <span class="mb-0" id="tipo2">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_tipo2">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">Tipo 3</h4>
+                                                <span class="mb-0" id="tipo3">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_tipo3">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">Tipo 4</h4>
+                                                <span class="mb-0" id="tipo4">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_tipo4">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col- mt-4 px-2">
+                                <div class="card card-stats">
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase mb-2 text-center">Tipo 5</h4>
+                                                <span class="mb-0" id="tipo5">0000</span>
+                                                <span class="text-info mb-0" >(</span>
+                                                <span class="text-info mb-0" id="p_tipo5">(00.00%)</span>
+                                                <span class="text-info mb-0" >)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <label id="id_amostra" hidden></label>
+            <div class="col-6 mx-0">
+                <div class="container-fluid px-0">
+                    <div class="card mb-0 mt-4 " style="min-height: 431px">
+                        <div class="card-header bg-transparent my-0">
+                            <div class="row ml-2 mb-2">
+                                <h3 class="mb-0" id="titulo">Atualizar Amostra </h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 ml-4 mt-2 pl-4">
+                                <div class="form-group">
+                                    <label>Produtor</label>
+                                    <input id="produtor_amostra" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 mt-2 pl-4">
+                                <div class="form-group">
+                                    <label>Código</label>
+                                    <input id="codigo_amostra" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 mt-2 pl-4">
+                                <div class="form-group">
+                                    <label>Usúario</label>
+                                    <input id="usuario_amostra" type="text" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-11 ml-4 pl-4">
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    <textarea class="form-control" id="descricao_amostra" rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 ml-4 pl-4 pr-0 mr-0 mb-4">
+                                <button class="btn btn-primary btn-lg btn-block" onclick="alterarAmostra()">Atualizar
+                                    dados</button>
+                            </div>
+                            <div class="col-lg-6 col-md-offset-4 ">
+                                <div id="resultado" role="alert" style="height: 51px; padding-top: 15px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container-fluid">
-            <div class="card mx-6 mt-4">
+            <div class="card mx-2 mt-4">
                 <div class="card-header bg-transparent my-0">
                     <div class="row ml-2 mb-2">
                         <h3 class="mb-0">Análises por imagens</h3>
@@ -111,9 +349,15 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-lg-10 pl-0 ml-0 mb-4">
-                    <button>Baixar imagens</button>
-                </div>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-3">
+            </div>
+            <div class="col-6 text-center pb-5 pt-3">
+                <button id="botaoI" class="btn btn-lg btn-secondary btn-block" onclick="baixarImagens()">Baixar todas as imagens</button>
+            </div>
+            <div class="col-3">
             </div>
         </div>
     </div>

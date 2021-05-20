@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^8.0.0"
+    "electron": "^8.5.5",
+    "sqlite3": "^5.0.0",
+    "zip-folder": "^1.0.0"
   },
   "directories": {
     "example": "examples"
